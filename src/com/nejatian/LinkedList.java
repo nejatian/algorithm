@@ -6,24 +6,37 @@ public class LinkedList {
         private int value;
         private Node next;
 
-        private Node(int value){
-           this.value=value;
+        private Node(int value) {
+            this.value = value;
 
         }
 
 
     }
+
     private Node first;
     private Node last;
+
     //add last
-    public void addLast(int item){
-    Node node= new Node(item);
-    if(first == null)
-        first = last = node;
-    else {
-        last.next = node;
-        last = node;
+    public void addLast(int item) {
+        Node node = new Node(item);
+        if (first == null)
+            first = last = node;
+        else {
+            last.next = node;
+            last = node;
+        }
+
     }
+
+    public void addFirst(int item) {
+        var node = new Node(item);
+        if(first == null)
+            first = last = node;
+        else{
+            node.next = first;
+            first = node;
+        }
 
     }
 }
